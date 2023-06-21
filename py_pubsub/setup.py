@@ -15,11 +15,13 @@ setup(
     zip_safe=True,
     maintainer='root',
     maintainer_email='techalla75@protonmail.com',
-    description='TODO: Package description',
-    license='TODO: License declaration',
+    description='A simple publisher-subscriber in ROS 2',
+    license='The MIT License',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'talker = py_pubsub.publisher_member_function:main',
+            'listener = py_pubsub.subscriber_member_function:main',
         ],
     },
 )
