@@ -1,18 +1,15 @@
-
 import os
 import sys
-
-# Add the base path of the project to the Python path
-base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.append(base_path)
-
-
 import unittest
 import time
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
+
 from py_pubsub.subscriber_member_function import MinimalSubscriber
+base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(base_path)
+
 
 class TestMinimalSubscriber(unittest.TestCase):
     def setUp(self):
@@ -60,6 +57,7 @@ class TestMinimalSubscriber(unittest.TestCase):
 
         # Assert the received message
         self.assertEqual(received_messages, ['Test Message'])
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,16 +1,14 @@
-
 import os
 import sys
+import unittest
+import rclpy
+from std_msgs.msg import String
+from py_pubsub.publisher_member_function import MinimalPublisher
 
 # Add the base path of the project to the Python path
 base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(base_path)
 
-import unittest
-import rclpy
-from rclpy.node import Node
-from std_msgs.msg import String
-from py_pubsub.publisher_member_function import MinimalPublisher
 
 class TestMinimalPublisher(unittest.TestCase):
     def setUp(self):
@@ -27,7 +25,7 @@ class TestMinimalPublisher(unittest.TestCase):
         def callback(msg):
             received_messages.append(msg.data)
 
-        subscription = minimal_publisher.create_subscription(
+        minimal_publisher.create_subscription(
             String, 'topic', callback, 10)
 
         # Publish a test message
@@ -41,6 +39,7 @@ class TestMinimalPublisher(unittest.TestCase):
 
         # Assert the received message
         self.assertEqual(received_messages, [test_message])
+
 
 if __name__ == '__main__':
     unittest.main()
