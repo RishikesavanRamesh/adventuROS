@@ -1,0 +1,9 @@
+{
+  "name": "ROS Development",
+  "image": "ros:humble",
+  "extensions": [
+    "ms-iot.vscode-ros",
+    "twxs.cmake"
+  ],
+  "postCreateCommand": "echo 'source /opt/ros/humble/setup.bash' >> ~/.bashrc"
+}
