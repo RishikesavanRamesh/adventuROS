@@ -5,5 +5,13 @@
     "ms-iot.vscode-ros",
     "twxs.cmake"
   ],
-  "postCreateCommand": "echo 'source /opt/ros/humble/setup.bash' >> ~/.bashrc"
+  "postCreateCommand": "echo 'source /opt/ros/humble/setup.bash' >> ~/.bashrc",
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/sshd:1": {
+      "version": "latest"
+    }
+  }
 }
